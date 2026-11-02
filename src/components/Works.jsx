@@ -1,15 +1,11 @@
 import { useState } from 'react'
-
-const videos = [
-  { id: 'rp81ki5rzVg', title: '로나 오프닝' },
-  { id: 'L91QExEAPf8', title: 'Flower Knows' },
-  { id: '_EO1HgoXkfQ', title: 'Feeling Love Attack' },
-  { id: '4lUEXP7Wm2c', title: '안산 지역홍보' },
-]
+import videos from '../data/works.json'
 
 export default function Works() {
   const [index, setIndex] = useState(0)
   const [playing, setPlaying] = useState(false)
+
+  if (videos.length === 0) return null
 
   const go = (dir) => {
     setPlaying(false)
